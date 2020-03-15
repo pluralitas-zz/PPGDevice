@@ -5,6 +5,7 @@
 
 //define global value(s)
 unsigned long HRarr[20];
+unsigned int counter = 0;
 
 //define constants
 const int HR_max = 300; //200 bpm
@@ -24,9 +25,18 @@ void intfunc() {
   if ((timediff < HR_min) && (timediff > HR_max)){
     Serial.println(timediff,DEC);
     Serial.flush();
+    counter = 0;
   }
   
   lasttime = millis(); 
 }
 
-void loop(){}
+void loop(){
+  delay(500);
+  if (counter == 10){ //check if idle for period then emit value 0
+    counter = 0;
+    Serial.println(counter,DEC);
+    Serial.flush();
+    }
+  counter++;
+  }
