@@ -9,7 +9,8 @@ import serial, serial.tools.list_ports
 from numpy import mean
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal, QThread
-from PyQt5.QtTest import QTest
+from PyQt5 import QtTest
+import sip
 
 ## PyQt5 FrontEnd
 class Ui_MainWindow(QtWidgets.QMainWindow):
@@ -26,7 +27,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def dispval(self,data): #display PPG value
         if data == 1:
             self.HeartLab.show()
-            QTest.qWait(500)
+            QtTest.QTest.qWait(500)
             self.HeartLab.hide()
         elif data == 0:
             self.BPMVal.setText("--")

@@ -7,5 +7,6 @@ http://wiki.seeedstudio.com/Seeeduino-Nano/
 
 ## Software
 * Arduino code outputs time between each heartbeat to COM serial at 38400 baud
+* Python version 3.6.10 64-bits
 * QThread pyserial backend to read and calculate Heart Rate
 * PyQt5 used for GUI front-end using pyqtSignal slots
